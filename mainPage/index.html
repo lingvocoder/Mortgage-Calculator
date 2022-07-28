@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../vendor/normalize.css">
+    <link rel="stylesheet" href="../global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
+    <title>Mortgage Calculator</title>
+</head>
+<body>
+<div class="m-calculator">
+    <h2 class="m-calculator__title">Mortgage Calculator</h2>
+    <div class="m-calculator__wrapper">
+        <div class="m-calculator__section">
+            <div class="m-calculator__row">
+                <div class="m-calculator__input-container">
+                    <div class="m-calculator__input-wrapper">
+                        <input id="interestRate" name="interestRate" class="m-calculator__input" autocomplete="off" type="text" value="" aria-label="Interest Rate">
+                        <div id="interestRateControl" class="m-calculator__control m-calculator__control_mobile">
+                            <span class="m-calculator__sign" data-name="interestRate" data-operation="decrease">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="12px" width="12px" viewBox="0 0 448 512">
+                                    <path d="M400 288h-352c-17.69 0-32-14.32-32-32.01s14.31-31.99 32-31.99h352c17.69 0 32 14.3 32 31.99S417.7 288 400 288z"/>
+                                </svg>
+                            </span>
+                            <span class="m-calculator__sign" data-name="interestRate" data-operation="increase">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="12px" width="12px" viewBox="0 0 448 512">
+                                    <path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <label for="interestRate" class="m-calculator__label-wrapper">
+                            <span class="m-calculator__label">Interest Rate</span>
+                        </label>
+                        <span class="m-calculator__underline"></span>
+                    </div>
+                    <div class="range-slider">
+                        <div class="range-slider__wrapper">
+                            <input id="interestRateRange" name="interestRate" class="range-slider__input" type="range" min="2" max="15" step="0.01" value="">
+                        </div>
+                        <progress class="range-slider__progressbar" max="100" value="0"></progress>
+                    </div>
+                    <div id="interestRateMinMax" class="m-calculator__input_range">
+                        <span class="interestRateMin"></span>
+                        <span class="interestRateMax"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="m-calculator__row">
+                <div class="m-calculator__input-container">
+                    <div class="m-calculator__input-wrapper">
+                        <span class="m-calculator__symbol currency">usd</span>
+                        <input id="loanAmount" name="loanAmount" data-format="true" class="m-calculator__input" autocomplete="off" placeholder="0" inputmode="numeric" pattern="[0-9]*" type="text" value=""
+                               aria-label="Loan Amount">
+                        <div id="loanAmountControl" class="m-calculator__control m-calculator__control_mobile">
+                            <span class="m-calculator__sign" data-name="loanAmount" data-operation="decrease">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="12px" width="12px" viewBox="0 0 448 512">
+                                    <path d="M400 288h-352c-17.69 0-32-14.32-32-32.01s14.31-31.99 32-31.99h352c17.69 0 32 14.3 32 31.99S417.7 288 400 288z"/>
+                                </svg>
+                            </span>
+                            <span class="m-calculator__sign" data-name="loanAmount" data-operation="increase">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="12px" width="12px" viewBox="0 0 448 512">
+                                    <path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <label for="loanAmount" class="m-calculator__label-wrapper">
+                            <span class="m-calculator__label">Loan Amount</span>
+                        </label>
+                        <span class="m-calculator__underline"></span>
+                    </div>
+                    <div class="range-slider">
+                        <div class="range-slider__wrapper">
+                            <input id="loanAmountRange" name="loanAmount" class="range-slider__input" type="range" min="" max="" step="10000" value="">
+                        </div>
+                        <progress class="range-slider__progressbar" max="100" value="0"></progress>
+                    </div>
+                    <div id="loanAmountMinMax" class="m-calculator__input_range">
+                        <span class="loanAmountMin"></span>
+                        <span class="loanAmountMax"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="m-calculator__row">
+                <div class="m-calculator__input-container">
+                    <div class="m-calculator__input-wrapper">
+                        <span class="m-calculator__symbol currency">usd</span>
+                        <input id="downPayment" name="downPayment" data-format="true" class="m-calculator__input" autocomplete="off" inputmode="numeric" pattern="[0-9]*" type="text" value=""
+                               aria-label="Down Payment">
+                        <div class="m-calculator__output m-calculator__output_overlapped">
+                            <span class="m-calculator__readings m-calculator__badge"></span>
+                        </div>
+                        <div id="downPaymentControl" class="m-calculator__control m-calculator__control_mobile">
+                            <span class="m-calculator__sign" data-name="downPayment" data-operation="decrease">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="12px" width="12px" viewBox="0 0 448 512">
+                                    <path d="M400 288h-352c-17.69 0-32-14.32-32-32.01s14.31-31.99 32-31.99h352c17.69 0 32 14.3 32 31.99S417.7 288 400 288z"/>
+                                </svg>
+                            </span>
+                            <span class="m-calculator__sign" data-name="downPayment" data-operation="increase">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="12px" width="12px" viewBox="0 0 448 512">
+                                    <path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <label for="downPayment" class="m-calculator__label-wrapper">
+                            <span class="m-calculator__label">Down Payment</span>
+                        </label>
+                        <span class="m-calculator__underline"></span>
+                    </div>
+                    <div class="range-slider">
+                        <div class="range-slider__wrapper">
+                            <input id="downPaymentRange" name="downPayment" data-type="currency" class="range-slider__input" type="range" min="15" max="80" step="1" value="">
+                        </div>
+                        <progress class="range-slider__progressbar" max="100" value="0"></progress>
+                    </div>
+                    <div id="downPaymentMinMax" class="m-calculator__input_range">
+                        <span class="downPaymentMin"></span>
+                        <span class="downPaymentMax"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="m-calculator__row">
+                <div class="m-calculator__input-container">
+                    <div class="m-calculator__input-wrapper">
+                        <input id="loanTerm" name="loanTerm" data-type="year" class="m-calculator__input" autocomplete="off" inputmode="numeric" pattern="[0-9]*" type="text" value="" maxlength="2"
+                               aria-label="Loan Term">
+                        <div id="loanTermControl" class="m-calculator__control m-calculator__control_mobile">
+                            <button type="button" class="m-calculator__sign" data-name="loanTerm" data-operation="decrease">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="12px" width="12px" viewBox="0 0 448 512">
+                                    <path d="M400 288h-352c-17.69 0-32-14.32-32-32.01s14.31-31.99 32-31.99h352c17.69 0 32 14.3 32 31.99S417.7 288 400 288z"/>
+                                </svg>
+                            </button>
+                            <button type="button" class="m-calculator__sign" data-name="loanTerm" data-operation="increase">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="12px" width="12px" viewBox="0 0 448 512">
+                                    <path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <label for="loanTerm" class="m-calculator__label-wrapper">
+                            <span class="m-calculator__label">Loan Term</span>
+                        </label>
+                        <span class="m-calculator__underline"></span>
+                    </div>
+                    <div class="range-slider">
+                        <div class="range-slider__wrapper">
+                            <input id="loanTermRange" name="loanTerm" data-type="year" class="range-slider__input" type="range" min="3" max="30" step="1" value="">
+                        </div>
+                        <progress class="range-slider__progressbar" max="100" value="0"></progress>
+                    </div>
+                    <div id="loanTermMinMax" class="m-calculator__input_range">
+                        <span class="loanTermMin"></span>
+                        <span class="loanTermMax"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="m-calculator__section">
+            <div class="m-calculator__inner">
+                <h2 class="m-calculator__title m-calculator__title_section">Payments</h2>
+                <div class="m-calculator__row m-calculator__row_underlined">
+                    <span class="m-calculator__option">Monthly Payment</span>
+                    <span class="m-calculator__output" data-type="monthlyPayment"></span>
+                </div>
+                <div class="m-calculator__row m-calculator__row_underlined">
+                    <span class="m-calculator__option">Total Loan Amount</span>
+                    <span class="m-calculator__output" data-type="principal"></span>
+                </div>
+                <div class="m-calculator__row m-calculator__row_underlined">
+                    <span class="m-calculator__option">Interest Rate</span>
+                    <span class="m-calculator__output" data-type="interestRate"></span>
+                </div>
+                <div class="m-calculator__row m-calculator__row_underlined">
+                    <span class="m-calculator__option">Loan Term</span>
+                    <span class="m-calculator__output" data-type="loanTerm"></span>
+                </div>
+                <div class="m-calculator__row m-calculator__row_underlined">
+                    <div class="m-calculator__btn-group">
+                        <button class="m-calculator__btn m-calculator__btn_send" type="button" value="Send application">
+                            <span class="m-calculator__btn-text">Send Application</span>
+                        </button>
+                        <button class="m-calculator__btn m-calculator__btn_schedule" type="button" value="Get amortization table">
+                        <span class="m-calculator__icon-wrapper">
+                            <img class="m-calculator__icon" src="../assets/icons/table.svg" alt="Amortization Table">
+                        </span>
+                            <span class="m-calculator__btn-text">Amortization Table</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="paymentChart" class="payments-chart"></div>
+</div>
+
+<script type="module">
+    import MortgageCalculator from "../scripts/main.js";
+
+    const mortgageCalculator = new MortgageCalculator({
+        loanAmount: 750000,
+        downPayment: 15,
+        interestRate: 6.7,
+        loanTerm: 20
+    });
+    mortgageCalculator.init();
+
+</script>
+</body>
+
+</html>

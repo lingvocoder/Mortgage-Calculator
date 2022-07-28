@@ -1,0 +1,133 @@
+@import "../_variables/variables";
+@import "../_mixins/mixins";
+
+.payments-chart {
+  width: 100%;
+  margin-top: 2rem;
+
+  &_loading.payments-chart__container:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: url("assets/icons/charts-skeleton.svg") center no-repeat;
+    background-size: cover;
+    display: block;
+  }
+
+  &__container {
+    position: relative;
+    padding-bottom: 20px;
+    background-color: #fff;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font: {
+      size: setFontSizeRem($rf-size, 20);
+      weight: 400;
+    };
+    line-height: 1rem;
+    letter-spacing: 0.025rem;
+    color: $main-color;
+  }
+
+  &__inner {
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__body {
+    width: 100%;
+    height: calc(var(--chart-height) * 1px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    transition: opacity .1s 0s cubic-bezier($animation-timing);
+
+    &.has-hovered .payments-chart__bar-wrapper:not(.is-hovered) {
+      opacity: 0.5;
+    }
+  }
+
+  &__bar-wrapper {
+    position: relative;
+    min-width: 1.6px;
+    flex-grow: 1;
+    margin: 0 0 0 0.8px;
+    cursor: pointer;
+    transition: opacity .1s 0s cubic-bezier($animation-timing);
+
+    &:first-child {
+      margin: 0;
+    }
+
+    &.is-hovered {
+      opacity: 1;
+    }
+  }
+
+  &__bar {
+    height: calc(var(--value) * 1px);
+    max-height: 100%;
+    transition: height .1s 0s cubic-bezier($animation-timing);
+
+    &_principal {
+      background-color: $bar-principal-color;
+    }
+
+    &_interest {
+      background-color: $bar-interest-color;
+    }
+  }
+
+  &__details {
+    width: min-content;
+    padding: .75rem;
+    margin: 0 auto;
+    border-radius: 4px;
+    background-color: #f9fafb;
+  }
+
+  &__point-wrapper {
+    display: flex;
+    gap: 16px;
+    overflow: hidden;
+    text-align: left;
+
+    &:not(:first-child) {
+      margin-top: 1rem;
+    }
+  }
+
+  &__term {
+    min-width: auto;
+    font: {
+      size: setFontSizeRem($rf-size, 14);
+      weight: 600;
+    };
+    line-height: 16px;
+    color: $main-color;
+  }
+
+  &__definition {
+    width: 30px;
+    display: inline-block;
+
+    &_principal {
+      background-color: $bar-principal-color;
+    }
+
+    &_interest {
+      background-color: $bar-interest-color;
+    }
+  }
+}
+
+
+

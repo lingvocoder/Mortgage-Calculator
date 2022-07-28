@@ -1,0 +1,91 @@
+@import "../_variables/variables";
+@import "../_mixins/mixins";
+
+.m-tooltip {
+  position: fixed;
+  display: block;
+  width: min-content;
+  padding: .5rem;
+  color: #fff;
+  background-color: rgba(28, 28, 28, .85);
+  text-shadow: 0 0 2px rgba(0, 0, 0, .5);
+  border-radius: 4px;
+  box-shadow: 1px 5px 15px -8px rgba(33, 37, 41, 0.25);
+  transition: opacity 0.1s 0s cubic-bezier($animation-timing);
+  cursor: pointer;
+  z-index: 100;
+
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  &__row {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  &__cell {
+    text-align: left;
+    color: inherit;
+    width: max-content;
+    line-height: 16px;
+
+    &_date {
+      font: {
+        size: setFontSizeRem($rf-size, 13);
+        weight: 500;
+      };
+    }
+
+    &_payment {
+      font: {
+        size: setFontSizeRem($rf-size, 13);
+        weight: 400;
+      };
+    }
+
+    &_principal {
+      font: {
+        size: setFontSizeRem($rf-size, 14);
+        weight: 400;
+      };
+
+      &:before {
+        content: '';
+        position: relative;
+        display: inline-block;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        margin-right: .5rem;
+        background-color: $bar-principal-color;
+      }
+    }
+
+    &_interest {
+      font: {
+        size: setFontSizeRem($rf-size, 14);
+        weight: 400;
+      };
+
+      &:before {
+        content: '';
+        position: relative;
+        display: inline-block;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        margin-right: .5rem;
+        background-color: $bar-interest-color;
+      }
+    }
+  }
+}

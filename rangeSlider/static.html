@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Range Slider</title>
+    <link rel="stylesheet" type="text/css" href="../global.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<div class="m-calculator__row">
+    <div class="range-slider">
+        <div class="range-slider__wrapper">
+            <input id="interestRateRange" name="interestRate" class="range-slider__input" type="range" min="0" max="100"
+                   step="1" value="">
+        </div>
+        <progress class="range-slider__progressbar" max="100" value="100"></progress>
+    </div>
+    <div id="interestRateMinMax" class="m-calculator__input_range">
+        <span class="interestRateMin">0</span>
+        <span class="interestRateMax">100</span>
+    </div>
+</div>
+</body>
+</html>

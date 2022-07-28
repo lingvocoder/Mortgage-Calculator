@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "@types/jest": "^23.3.12",
+    "jest": "^28.1.1"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.25",
+    "prettier": "^2.7.1"
+  }
+}

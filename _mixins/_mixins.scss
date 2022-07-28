@@ -1,0 +1,6 @@
+@function setFontSizeRem($base, $size){
+  $sizeRem:0;
+  $r:$base / ($base * 0 + 1);
+  @warn "Function will return 'rem' units";
+  @return $size / $r * 1rem;
+}

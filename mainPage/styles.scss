@@ -1,0 +1,328 @@
+@import "../_variables/variables";
+@import "../_mixins/mixins";
+
+$inner-border-color: #dbdee1;
+
+.m-calculator {
+  position: relative;
+  max-width: 72.25rem;
+  height: auto;
+  padding: 2rem 5rem;
+  margin: 0 auto;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font: {
+      size: setFontSizeRem($rf-size, 20);
+      weight: 600;
+    };
+    line-height: 1rem;
+    letter-spacing: 0.025rem;
+    color: $main-color;
+
+    &_section {
+      text-align: left;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    row-gap: 24px;
+    gap: 24px;
+  }
+
+  &__inner {
+    height: 100%;
+    padding: 1.25rem;
+    border: 1px solid $inner-border-color;
+    border-radius: 4px;
+  }
+
+  &__section {
+    flex: 1 1 50%;
+  }
+
+  &__row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 16px;
+
+    &_underlined:not(:last-of-type) {
+      margin-bottom: 0;
+      font-size: 1.125rem;
+      justify-content: space-between;
+      border-bottom: 1px solid #ebebeb;
+    }
+
+    &_underlined:last-of-type {
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+  }
+
+  &__input-container {
+    width: 100%;
+    color: $main-color;
+  }
+
+  &__input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 64px;
+    border-bottom: 1px solid #d1d5db;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #f9fafb;
+    transition: background-color .15s 0s;
+    animation-timing-function: cubic-bezier($animation-timing);
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    padding: 34px 16px 10px;
+    font: {
+      size: setFontSizeRem($rf-size, 16);
+      weight: 600;
+    };
+    line-height: 1.25rem;
+    color: $main-color;
+    background-color: transparent;
+    border: 0;
+    border-top-right-radius: 4px;
+    margin: 0;
+    outline: none;
+    appearance: none;
+    transition: background-color .15s 0s cubic-bezier($animation-timing);
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &_range {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      left: 0;
+      font: {
+        size: setFontSizeRem($rf-size, 12);
+        weight: 400;
+      };
+      line-height: 18px;
+      margin-top: 8px;
+      color: #6b7280;
+    }
+
+    &:hover {
+      background-color: #ebebeb;
+    }
+
+    &:focus {
+      border-color: transparent !important;
+      background-color: #ebebeb;
+
+      & ~ .m-calculator__underline:before {
+        right: 0;
+      }
+    }
+
+  }
+
+  &__label-wrapper {
+    position: absolute;
+    top: calc(64px / 2);
+    left: 80px;
+    transform: translateY(-100%) scale(.875);
+    transform-origin: 0 0;
+    color: #6b7280;
+
+    &[for="interestRate"],
+    &[for="loanTerm"] {
+      left: 16px;
+    }
+  }
+
+  &__label {
+    text-align: left;
+    font: {
+      size: setFontSizeRem($rf-size, 14);
+      weight: 400;
+    };
+    line-height: 1.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: .25px;
+  }
+
+  &__underline {
+    &:before {
+      position: absolute;
+      height: 0;
+      content: "";
+      left: 0;
+      bottom: -1px;
+      right: 100%;
+      border-bottom: 2px solid $main-color;
+      transition: background-color .15s 0s, right .15s 0s;
+      animation-timing-function: cubic-bezier($animation-timing);
+    }
+  }
+
+  &__option {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    color: rgba(14, 36, 48, 0.7);
+  }
+
+  &__symbol {
+    display: inline-block;
+    min-width: 64px;
+    height: auto;
+    padding: .375rem 1rem;
+    line-height: 1.25rem;
+    color: $main-color;
+    border-right: 1px solid #ced4da;
+    text-transform: uppercase;
+  }
+
+  &__badge {
+    padding: .125rem .75rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    background-color: transparentize($main-bg-color, 0.7);
+  }
+
+  &__control {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.25rem;
+
+    &_mobile {
+      position: absolute;
+      right: 0;
+      margin-right: 4px;
+      //z-index: $z-index;
+    }
+  }
+
+  &__sign {
+    padding: .25rem;
+    border: 1px solid $main-color;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+
+    & svg {
+      fill: #0e2430;
+    }
+
+    &_disabled {
+      border-color: #a5adb6;
+
+      & svg {
+        fill: #a5adb6;
+      }
+    }
+
+    &:nth-child(1) {
+      margin-right: 10px;
+    }
+
+    &:nth-child(2) {
+      margin-left: 10px;
+    }
+  }
+
+  &__output {
+    display: flex;
+    flex-shrink: 0;
+    padding-right: 16px;
+    font-weight: 600;
+
+    &_overlapped {
+      position: absolute;
+      right: 0;
+      z-index: 0;
+      font-weight: 400;
+    }
+  }
+
+  &__readings {
+    line-height: 1.25rem;
+  }
+
+  &__btn-group {
+    display: flex;
+    width: 100%;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__icon-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__btn {
+    display: inline-flex;
+    justify-content: center;
+    width: 45%;
+    padding: 8px 16px;
+    background-color: $main-bg-color;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color .15s 0s cubic-bezier($animation-timing);
+
+    &_download {
+      width: auto;
+    }
+
+    &:hover {
+      background-color: transparentize($main-bg-color, 0.3);
+    }
+
+    &_link {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    &-text {
+      font: {
+        size: setFontSizeRem($rf-size, 14);
+        weight: 500;
+      };
+      line-height: 1.25rem;
+    }
+  }
+
+}
+
