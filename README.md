@@ -1,5 +1,5 @@
 # Mortgage-Calculator
-This is a fully functional mortgage calculator which has a perfect visualization of calculations. It can also generate an amortization table and convert it into PDF format.
+This is a fully functional <strong>mortgage</strong> calculator which has a perfect visualization of calculations. It can also generate an amortization table and convert it into PDF format.
 One of the main features of theis application is that you can convert amortization schedule into PDF formart and save it on your device or print it.
 You can also visualize all the payments by means of the chart which is updated each time you change either interest rate or loan period.
 I decided to use JS/HTML/CSS to create this widget.
