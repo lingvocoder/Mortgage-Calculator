@@ -2,7 +2,7 @@
   position: fixed;
   display: block;
   width: min-content;
-  padding: .5rem;
+  padding: 0.5rem;
   color: #fff;
   background-color: rgba(28, 28, 28, 0.85);
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
@@ -43,7 +43,7 @@
         left: 0;
         width: 10px;
         height: 10px;
-        margin-right: .5rem;
+        margin-right: 0.5rem;
         background-color: #02b2ee; }
     .m-tooltip__cell_interest {
       font-size: 0.875rem;
@@ -56,7 +56,7 @@
         left: 0;
         width: 10px;
         height: 10px;
-        margin-right: .5rem;
+        margin-right: 0.5rem;
         background-color: #06d6a0; }
 
 /*# sourceMappingURL=styles.css.map */

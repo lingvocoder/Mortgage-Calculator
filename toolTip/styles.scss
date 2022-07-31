@@ -5,10 +5,10 @@
   position: fixed;
   display: block;
   width: min-content;
-  padding: .5rem;
+  padding: 0.5rem;
   color: #fff;
-  background-color: rgba(28, 28, 28, .85);
-  text-shadow: 0 0 2px rgba(0, 0, 0, .5);
+  background-color: rgba(28, 28, 28, 0.85);
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   border-radius: 4px;
   box-shadow: 1px 5px 15px -8px rgba(33, 37, 41, 0.25);
   transition: opacity 0.1s 0s cubic-bezier($animation-timing);
@@ -64,7 +64,7 @@
         left: 0;
         width: 10px;
         height: 10px;
-        margin-right: .5rem;
+        margin-right: 0.5rem;
         background-color: $bar-principal-color;
       }
     }
@@ -83,7 +83,7 @@
         left: 0;
         width: 10px;
         height: 10px;
-        margin-right: .5rem;
+        margin-right: 0.5rem;
         background-color: $bar-interest-color;
       }
     }

@@ -93,7 +93,7 @@ $underlay-color: rgba(11, 31, 53, 1);
   }
 
   &__term {
-    padding: .5rem .5rem .5rem 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
     min-width: 15rem;
     color: #6b7280;
     font: {
@@ -102,7 +102,7 @@ $underlay-color: rgba(11, 31, 53, 1);
   }
 
   &__definition {
-    padding: .5rem 1rem .5rem .5rem;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
     font: {
       weight: 600;
     };

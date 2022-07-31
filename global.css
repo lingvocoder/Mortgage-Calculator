@@ -91,7 +91,7 @@ h4 {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     background-color: #f9fafb;
-    transition: background-color .15s 0s;
+    transition: background-color 0.15s 0s;
     animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
   .m-calculator__input {
     width: 100%;
@@ -146,7 +146,7 @@ h4 {
     text-overflow: ellipsis;
     white-space: nowrap;
     pointer-events: none;
-    letter-spacing: .25px; }
+    letter-spacing: 0.25px; }
   .m-calculator__underline:before {
     position: absolute;
     height: 0;
@@ -155,7 +155,7 @@ h4 {
     bottom: -1px;
     right: 100%;
     border-bottom: 2px solid #0e2430;
-    transition: background-color .15s 0s, right .15s 0s;
+    transition: background-color 0.15s 0s, right 0.15s 0s;
     animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
   .m-calculator__option {
     margin-top: 18px;
@@ -168,13 +168,13 @@ h4 {
     display: inline-block;
     min-width: 64px;
     height: auto;
-    padding: .375rem 1rem;
+    padding: 0.375rem 1rem;
     line-height: 1.25rem;
     color: #0e2430;
     border-right: 1px solid #ced4da;
     text-transform: uppercase; }
   .m-calculator__badge {
-    padding: .125rem .75rem;
+    padding: 0.125rem 0.75rem;
     border-radius: 9999px;
     display: inline-flex;
     align-items: center;
@@ -189,7 +189,7 @@ h4 {
       right: 0;
       margin-right: 4px; }
   .m-calculator__sign {
-    padding: .25rem;
+    padding: 0.25rem;
     border: 1px solid #0e2430;
     border-radius: 9999px;
     display: inline-flex;
@@ -352,15 +352,15 @@ h4 {
     appearance: none;
     background: transparent;
     animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
-    transition: background .15s 0s; }
+    transition: background 0.15s 0s; }
     .range-slider__progressbar::-webkit-progress-bar {
       background-color: transparent;
       border-radius: 0;
-      -webkit-transition: background .15s 0s; }
+      -webkit-transition: background 0.15s 0s; }
     .range-slider__progressbar::-moz-progress-bar {
       background-color: #02b2ee;
       border-radius: 0;
-      -moz-transition: background .15s 0s; }
+      -moz-transition: background 0.15s 0s; }
     .range-slider__progressbar::-webkit-progress-value {
       background-color: #02b2ee; }
 
@@ -424,7 +424,7 @@ h4 {
       background-color: #06d6a0; }
   .payments-chart__details {
     width: min-content;
-    padding: .75rem;
+    padding: 0.75rem;
     margin: 0 auto;
     border-radius: 4px;
     background-color: #f9fafb; }
@@ -453,7 +453,7 @@ h4 {
   position: fixed;
   display: block;
   width: min-content;
-  padding: .5rem;
+  padding: 0.5rem;
   color: #fff;
   background-color: rgba(28, 28, 28, 0.85);
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
@@ -494,7 +494,7 @@ h4 {
         left: 0;
         width: 10px;
         height: 10px;
-        margin-right: .5rem;
+        margin-right: 0.5rem;
         background-color: #02b2ee; }
     .m-tooltip__cell_interest {
       font-size: 0.875rem;
@@ -507,7 +507,7 @@ h4 {
         left: 0;
         width: 10px;
         height: 10px;
-        margin-right: .5rem;
+        margin-right: 0.5rem;
         background-color: #06d6a0; }
 
 .payments__modal {
@@ -567,12 +567,12 @@ h4 {
 .payments__point-wrapper:nth-child(4) td {
   padding-bottom: 1.5rem; }
 .payments__term {
-  padding: .5rem .5rem .5rem 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
   min-width: 15rem;
   color: #6b7280;
   font-weight: 400; }
 .payments__definition {
-  padding: .5rem 1rem .5rem .5rem;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
   font-weight: 600; }
 .payments__row {
   position: absolute;

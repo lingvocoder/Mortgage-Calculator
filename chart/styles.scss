@@ -48,7 +48,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
-    transition: opacity .1s 0s cubic-bezier($animation-timing);
+    transition: opacity 0.1s 0s cubic-bezier($animation-timing);
 
     &.has-hovered .payments-chart__bar-wrapper:not(.is-hovered) {
       opacity: 0.5;
@@ -61,7 +61,7 @@
     flex-grow: 1;
     margin: 0 0 0 0.8px;
     cursor: pointer;
-    transition: opacity .1s 0s cubic-bezier($animation-timing);
+    transition: opacity 0.1s 0s cubic-bezier($animation-timing);
 
     &:first-child {
       margin: 0;
@@ -75,7 +75,7 @@
   &__bar {
     height: calc(var(--value) * 1px);
     max-height: 100%;
-    transition: height .1s 0s cubic-bezier($animation-timing);
+    transition: height 0.1s 0s cubic-bezier($animation-timing);
 
     &_principal {
       background-color: $bar-principal-color;
@@ -88,7 +88,7 @@
 
   &__details {
     width: min-content;
-    padding: .75rem;
+    padding: 0.75rem;
     margin: 0 auto;
     border-radius: 4px;
     background-color: #f9fafb;

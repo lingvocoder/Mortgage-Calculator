@@ -55,12 +55,12 @@
 .payments__point-wrapper:nth-child(4) td {
   padding-bottom: 1.5rem; }
 .payments__term {
-  padding: .5rem .5rem .5rem 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
   min-width: 15rem;
   color: #6b7280;
   font-weight: 400; }
 .payments__definition {
-  padding: .5rem 1rem .5rem .5rem;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
   font-weight: 600; }
 .payments__row {
   position: absolute;
