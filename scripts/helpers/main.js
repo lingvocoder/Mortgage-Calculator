@@ -10,6 +10,8 @@ export const getDomNodes = (selector) => {
 };
 
 /**
+ * @param {Object} Object with keys and default values
+ * @returns A new string with a replaced pattern 
  *
  */
 
