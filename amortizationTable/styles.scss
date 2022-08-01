@@ -108,6 +108,16 @@ $underlay-color: rgba(11, 31, 53, 1);
     };
   }
 
+  &__disclaimer {
+    text-align: center;
+    color: #6b7280;
+    margin:0 auto 0.5rem 4rem;
+    font: {
+      size: setFontSizeRem($rf-size,12);
+      weight: 400;
+    };
+  }
+
   &__row {
     position: absolute;
     width: 100%;
@@ -133,6 +143,7 @@ $underlay-color: rgba(11, 31, 53, 1);
     &_up {
       bottom: 0;
       justify-content: flex-end;
+      align-items: flex-end;
 
       & > .modal__icon_mobile {
         display: none;
@@ -180,7 +191,7 @@ $underlay-color: rgba(11, 31, 53, 1);
       border: 2px solid $main-color;
       border-radius: 2px;
 
-      & .payments__icon_up{
+      & .payments__icon_up {
         stroke: $main-color
       }
     }
@@ -206,6 +217,10 @@ $underlay-color: rgba(11, 31, 53, 1);
       line-height: 20px;
       text-align: left;
       letter-spacing: 0.5px;
+
+      &[data-id="principal"] {
+        text-align: center;
+      }
     }
   }
 
@@ -227,12 +242,26 @@ $underlay-color: rgba(11, 31, 53, 1);
       }
 
       &[data-id="principal"] {
+        text-align: center;
         color: #6b7280;
       }
     }
   }
 
   &__t-row {
+    display: table-row;
+
+    &-separator {
+      text-align: center;
+      padding: 0.5rem 1rem 0.5rem;
+      font: {
+        size: setFontSizeRem($rf-size, 14);
+        weight: 500;
+      };
+      line-height: 20px;
+      color: #fff;
+      background-color: $main-color;
+    }
 
     &[data-num="even"] {
       background-color: #f9fafb;

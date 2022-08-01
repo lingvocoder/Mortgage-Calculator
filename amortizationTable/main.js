@@ -43,19 +43,23 @@ export default class AmortizationTable {
   }
 
   getTableRow(paymentObj, idx) {
-    const { locale } = paymentObj;
+    const { locale, date, template } = paymentObj;
+    const regExp = new RegExp(/\D+/);
+    date.replace(regExp, "");
     const counter = idx % 2 === 0 ? "even" : "odd";
     const itemEntries = Object.entries(paymentObj).filter(
-      (e) => !e.includes("locale")
+      (e) => !e.includes("locale") && !e.includes("template")
     );
     return `
-                <tr data-num="${counter}" class="payments__t-row">
+                <tr data-num="${counter}" data-curryear="${date}" class="payments__t-row">
                     ${itemEntries
                       .map(([key, value]) => {
                         return this.getTableCell([key, value], locale);
                       })
                       .join("")}
-                </tr>`;
+                </tr>
+                ${template}
+            `;
   }
 
   getTableRows(data) {
@@ -135,6 +139,20 @@ export default class AmortizationTable {
       });
 
       doc.autoTable({
+        didParseCell: function (data) {
+          if (data.row.section === "body" && data.cell.colSpan === 5) {
+            data.cell.styles.fillColor = [14, 36, 48];
+            data.cell.styles.textColor = [255, 255, 255];
+            data.cell.styles.halign = "center";
+            data.cell.styles.cellPadding = {
+              left: 4,
+              top: 2,
+              bottom: 2,
+              right: 4,
+            };
+          }
+        },
+
         didDrawPage: function (data) {
           let str = "Page " + doc.internal.getNumberOfPages();
           if (typeof doc.putTotalPages === "function") {
@@ -211,7 +229,9 @@ export default class AmortizationTable {
                               )}</td>
                         </tr>
                         <tr class="payments__point-wrapper">
-                               <td class="payments__term">Total of ${data.length} Payments:</td>
+                               <td class="payments__term">Total of ${
+                                 data.length
+                               } Payments:</td>
                                <td class="payments__definition">${formatNumber(
                                  totalPayments,
                                  locale
@@ -252,6 +272,7 @@ export default class AmortizationTable {
                                         </table>
                                     </div>
                                     <div class="payments__row payments__row_up">
+                                        <span class="payments__disclaimer">&ast;The above calculation is approximate, for more accurate information, please contact the Bank</span>
                                         <button type="button" class="payments__button payments__button_download"  value="Download file">
                                             <svg class="payments__icon payments__icon_download" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 384 512">
                                                 <path d="M384 128h-128V0L384 128zM256 160H384v304c0 26.51-21.49 48-48 48h-288C21.49 512 0 490.5 0 464v-416C0 21.49 21.49 0 48 0H224l.0039 128C224 145.7 238.3 160 256 160zM255 295L216 334.1V232c0-13.25-10.75-24-24-24S168 218.8 168 232v102.1L128.1 295C124.3 290.3 118.2 288 112 288S99.72 290.3 95.03 295c-9.375 9.375-9.375 24.56 0 33.94l80 80c9.375 9.375 24.56 9.375 33.94 0l80-80c9.375-9.375 9.375-24.56 0-33.94S264.4 285.7 255 295z"/>

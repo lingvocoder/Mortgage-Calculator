@@ -22,6 +22,7 @@ import {
   roundNumber,
   setInputAttribute,
   setInputValue,
+  replaceInString,
 } from "./helpers/main.js";
 import AmortizationTable from "../amortizationTable/main.js";
 import PaymentChart from "../chart/main.js";
@@ -149,7 +150,7 @@ export default class MortgageCalculator {
   setInterestRate = () => {
     const interestRate = document.querySelector("#interestRate");
     setInputValue(interestRate, this.interestRate);
-    setInputAttribute(interestRate,'value',this.interestRate);
+    setInputAttribute(interestRate, "value", this.interestRate);
     this.setInterestRateMinMax();
   };
 
@@ -878,11 +879,29 @@ export default class MortgageCalculator {
           interestPaid: 0,
           balance: 0,
           locale: locale,
+          template: null,
         };
 
         const interestsPaid = (interestRate / 12 / 100) * currBalance;
         const principal = monthlyPayment - interestsPaid;
         currBalance -= principal;
+        const currMonth = replaceInString({
+          str: formatDate(currDate, monthCounter),
+          pattern: /[\d ]+$/,
+          replPattern: "",
+        });
+        const currYear = replaceInString({
+          str: formatDate(currDate, monthCounter),
+          pattern: /\D+/,
+          replPattern: "",
+        });
+        const template = (
+          data
+        ) => `<tr class="payments__t-row"  data-curr-year="${Number(data) + 1}">
+                        <th class="payments__t-row-separator" data-key ="curryear" colspan="${
+                          Object.keys(paymentObj).length
+                        }" >${Number(data) + 1}</th>
+                    </tr>`;
         if (currBalance < 0) currBalance = 0;
 
         for (let key of Object.keys(payment)) {
@@ -902,8 +921,11 @@ export default class MortgageCalculator {
             case "balance":
               payment[key] = roundNumber(currBalance, 5);
               break;
+            case "template":
+              payment[key] = currMonth === "Dec" ? `${template(currYear)}` : "";
           }
         }
+
         paymentObjArray.push(payment);
         numberOfMonths--;
         monthCounter++;

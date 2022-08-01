@@ -10,10 +10,19 @@ export const getDomNodes = (selector) => {
 };
 
 /**
- * 
+ *
+ */
+
+export const replaceInString = ({str = "", pattern = null, replace = ''}) => {
+  const regex = new RegExp(pattern);
+  return str.replace(regex, replace);
+};
+
+/**
+ *
  * @param input Input element
  * @returns {Object} returns an object with the key as the name of the attribute and value as it's value
- * 
+ *
  */
 
 export const getAttributeObject = (input) => {
@@ -21,7 +30,7 @@ export const getAttributeObject = (input) => {
     obj[attr.name] = attr.value;
     return obj;
   }, {});
-}
+};
 
 /**
  *
@@ -55,7 +64,7 @@ export const getInputAttribute = (input, type) => {
 /**
  *
  * @param string Number String with comma as a thousand's separator character
- * @returns {string} String with white space as a thousand's separator character
+ * @returns {string} String with space as a thousand's separator character
  */
 export const replaceDigitCommas = (string) => {
   return string.replace(/(?<!\..*)(\d)(?=(?:\d{3})+(?:\.|$))/g, "$1 ");
@@ -133,7 +142,7 @@ export const debounce = (fn, delay = 500) => {
       clearTimeout(timeoutId);
     }
     timeoutId = setTimeout(() => {
-      fn.apply(null, args)
+      fn.apply(null, args);
     }, delay);
   };
 };
