@@ -467,7 +467,7 @@ export default class MortgageCalculator {
       this.onInterestRateRangeChangeHandle
     );
     interestRate.addEventListener(
-      "change",
+      "input",
       this.onInterestRateTextChangeHandle
     );
     controlBox.addEventListener("click", this.onInterestRateControlHandle);
@@ -491,7 +491,7 @@ export default class MortgageCalculator {
     let currentValueFloat = parseFloat(interestRate.value);
     const resValue = currentValueFloat + parseFloat(step) * direction;
     setInputValue(interestRate, roundNumber(resValue, 2));
-    const event = new Event("change");
+    const event = new Event("input");
     interestRate.dispatchEvent(event);
   };
 
@@ -700,7 +700,7 @@ export default class MortgageCalculator {
     const textInputArray = getInputFields("text");
 
     textInputArray.forEach((ti) =>
-      ti.addEventListener("change", this.validateInput)
+      ti.addEventListener("input", this.validateInput)
     );
     textInputArray.forEach((ti) =>
       ti.addEventListener("paste", (ev) => ev.preventDefault())

@@ -54,7 +54,7 @@ $inner-border-color: #dbdee1;
 
     &_underlined:not(:last-of-type) {
       margin-bottom: 0;
-      font-size: 1.125rem;
+      font-size: 1.25rem;
       justify-content: space-between;
       border-bottom: 1px solid #ebebeb;
     }
@@ -89,7 +89,7 @@ $inner-border-color: #dbdee1;
     padding: 34px 16px 10px;
     font: {
       size: setFontSizeRem($rf-size, 16);
-      weight: 600;
+      weight: 700;
     };
     line-height: 1.25rem;
     color: $main-color;
@@ -251,7 +251,7 @@ $inner-border-color: #dbdee1;
     display: flex;
     flex-shrink: 0;
     padding-right: 16px;
-    font-weight: 600;
+    font-weight: 700;
 
     &_overlapped {
       position: absolute;
@@ -317,7 +317,7 @@ $inner-border-color: #dbdee1;
 
     &-text {
       font: {
-        size: setFontSizeRem($rf-size, 14);
+        size: setFontSizeRem($rf-size, 16);
         weight: 500;
       };
       line-height: 1.25rem;

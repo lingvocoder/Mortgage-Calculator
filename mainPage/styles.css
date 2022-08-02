@@ -35,7 +35,7 @@
     margin-bottom: 16px; }
     .m-calculator__row_underlined:not(:last-of-type) {
       margin-bottom: 0;
-      font-size: 1.125rem;
+      font-size: 1.25rem;
       justify-content: space-between;
       border-bottom: 1px solid #ebebeb; }
     .m-calculator__row_underlined:last-of-type {
@@ -60,7 +60,7 @@
     height: 100%;
     padding: 34px 16px 10px;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.25rem;
     color: #0e2430;
     background-color: transparent;
@@ -172,7 +172,7 @@
     display: flex;
     flex-shrink: 0;
     padding-right: 16px;
-    font-weight: 600; }
+    font-weight: 700; }
     .m-calculator__output_overlapped {
       position: absolute;
       right: 0;
@@ -218,7 +218,7 @@
       text-decoration: none;
       cursor: pointer; }
     .m-calculator__btn-text {
-      font-size: 0.875rem;
+      font-size: 1rem;
       font-weight: 500;
       line-height: 1.25rem; }
 
