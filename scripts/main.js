@@ -24,8 +24,11 @@ import {
   setInputValue,
   replaceInString,
 } from "./helpers/main.js";
-import AmortizationTable from "../amortizationTable/main.js";
-import PaymentChart from "../chart/main.js";
+import AmortizationTable from "../components/amortizationTable/main.js";
+import PaymentChart from "../components/stackedBarChart/main.js";
+import { Chart, registerables } from "../node_modules/chart.js/dist/chart.mjs";
+
+Chart.register(...registerables);
 
 export default class MortgageCalculator {
   activeMortgageCalc = {
@@ -292,8 +295,8 @@ export default class MortgageCalculator {
 
   onLoanAmountChange = () => {
     const loanAmountRange = document.querySelector("#loanAmountRange");
-    const loanAmount = document.querySelector("#loanAmount");
     const controlBox = document.querySelector("#loanAmountControl");
+    const loanAmount = document.querySelector("#loanAmount");
     loanAmountRange.addEventListener(
       "input",
       this.onLoanAmountRangeChangeHandle
@@ -466,10 +469,7 @@ export default class MortgageCalculator {
       "input",
       this.onInterestRateRangeChangeHandle
     );
-    interestRate.addEventListener(
-      "input",
-      this.onInterestRateTextChangeHandle
-    );
+    interestRate.addEventListener("input", this.onInterestRateTextChangeHandle);
     controlBox.addEventListener("click", this.onInterestRateControlHandle);
   };
 
@@ -800,7 +800,7 @@ export default class MortgageCalculator {
           currentValueFloat = currentValueFloat.toFixed(0);
           setInputValue(ti, currentValueFloat);
         } else {
-          let isValid = false;
+          isValid = false;
           setInputValue(ti, currValue);
         }
       }
@@ -826,7 +826,7 @@ export default class MortgageCalculator {
           currentValueFloat = currentValueFloat.toFixed(0);
           setInputValue(ti, currentValueFloat);
         } else {
-          let isValid = true;
+          isValid = true;
           setInputValue(ti, currValue);
         }
       }
@@ -867,6 +867,7 @@ export default class MortgageCalculator {
       const { principal, monthlyPayment, interestRate, loanTerm, locale } =
         paymentObj;
       let currBalance = principal;
+      let totalLoanAmount = principal;
       let currDate = new Date();
       let monthCounter = 1;
       let numberOfMonths = loanTerm * 12;
@@ -880,6 +881,7 @@ export default class MortgageCalculator {
           balance: 0,
           locale: locale,
           template: null,
+          totalLoanAmount: 0,
         };
 
         const interestsPaid = (interestRate / 12 / 100) * currBalance;
@@ -897,8 +899,8 @@ export default class MortgageCalculator {
         });
         const template = (
           data
-        ) => `<tr class="payments__t-row"  data-curr-year="${Number(data) + 1}">
-                        <th class="payments__t-row-separator" data-key ="curryear" colspan="${
+        ) => `<tr class="payments__t-row payments__t-row-separator"  data-curr-year="${Number(data) + 1}">
+                        <th class="" data-key ="curryear" colspan="${
                           Object.keys(paymentObj).length
                         }" >${Number(data) + 1}</th>
                     </tr>`;
@@ -921,6 +923,9 @@ export default class MortgageCalculator {
             case "balance":
               payment[key] = roundNumber(currBalance, 5);
               break;
+            case "totalLoanAmount":
+              payment[key] = roundNumber(totalLoanAmount, 5);
+              break;
             case "template":
               payment[key] = currMonth === "Dec" ? `${template(currYear)}` : "";
           }
@@ -942,3 +947,10 @@ export default class MortgageCalculator {
 // } else {
 //   currValue = "0" + currValue.substring(1);
 // }
+
+const output = parseFloat("2,299.00".replace(/,/g, ""));
+console.log(output);
+
+// value.toFixed(cents).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")//make number string beautiful
+// remove non numeric chars (except decimal)
+// var value = String(this.price).replace(/[^0-9.]/g, '').replace(/^0+/, '');

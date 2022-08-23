@@ -1,9 +1,9 @@
 @import "_variables/variables";
 @import "_mixins/mixins";
-@import "defaultPage/styles";
+@import "components/defaultPage/styles";
 @import "mainPage/styles";
-@import "rangeSlider/styles";
-@import "chart/styles";
-@import "toolTip/styles";
-@import "amortizationTable/styles";
+@import "components/rangeSlider/styles";
+@import "components/stackedBarChart/styles";
+@import "components/toolTip/styles";
+@import "components/amortizationTable/styles";
 @import "media";

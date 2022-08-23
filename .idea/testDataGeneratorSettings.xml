@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="TestDataGeneratorSettingsState">
+    <option name="userDefinedGenerators">
+      <list>
+        <CustomGeneratorSettings>
+          <option name="data">
+            <map>
+              <entry key="delimiter_key" value=",&#10;" />
+              <entry key="postfix_key" value="]" />
+              <entry key="prefix_key" value="[&#10;" />
+              <entry key="template_key" value="{&#10;    &quot;title&quot;: &quot;Post $index&quot;,&#10;    &quot;body&quot;: &quot;This post as of $index&quot;, &#10;    &quot;id&quot;: &quot;$uuid&quot;,&#10;}" />
+            </map>
+          </option>
+          <option name="name" value="Async Test Data Generator" />
+          <option name="type" value="Multiple" />
+        </CustomGeneratorSettings>
+      </list>
+    </option>
+  </component>
+</project>

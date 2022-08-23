@@ -1,6 +1,77 @@
-@function setFontSizeRem($base, $size){
-  $sizeRem:0;
-  $r:$base / ($base * 0 + 1);
+@function setFontSizeRem($base, $size) {
+  $sizeRem: 0;
+  $r: $base / ($base * 0 + 1);
   @warn "Function will return 'rem' units";
   @return $size / $r * 1rem;
 }
+
+/// Немного осветлить цвет
+/// @access public
+/// @param {Color} $color - цвет для осветления
+/// @param {Number} $percentage - процент от `$color` в возвращаемом цвете
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Немного затемнить цвет
+/// @access public
+/// @param {Color} $color - цвет для затемнения
+/// @param {Number} $percentage - процент от `$color` в возвращаемом цвете
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+                    type-of($raw-query) == 'string',
+                    unquote($raw-query),
+                    inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'Не указано значение для `#{$breakpoint}`. '
+       + 'Пожалуйста, убедитесь, что точка останова объявлена в карте `$breakpoints`.';
+  }
+}
+
+///Карта z-index'ов (собирает все слои приложения)
+///@type Map
+///@access private
+///@prop {String}key - Имя слоя
+///@prop {Number}value - Значение Z
+
+$z-indexes: (
+        'modal':1000,
+        'dropdown':800,
+        'flyout':800,
+        'default':20,
+        'under':-1,
+);
+/// Получение значения z-index из имени слоя
+/// @access public
+/// @param {String} $layer - Имя слоя
+/// @return {Number}
+/// @require $z-indexes
+
+@function getZIndex($layer) {
+  @if (not map-has-key($z-indexes,$layer)) {
+    @error 'Нет слоя с именем `#{$layer}` в списке слоёв. Выберите нужное название слоя из списка слоёв #{map-keys($z-indexes)}.'
+  }
+  @return map-get($z-indexes, $layer);
+}
+
+@mixin aspectRatio($width, $height: $width) {
+  $ratio: $width / $height;
+  aspect-ratio: $ratio / 1;
+}
+
+
+

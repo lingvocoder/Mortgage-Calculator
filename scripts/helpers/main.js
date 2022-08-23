@@ -20,6 +20,11 @@ export const replaceInString = ({str = "", pattern = null, replace = ''}) => {
   return str.replace(regex, replace);
 };
 
+
+export const addSeparator = (value) => {
+  return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+}
+
 /**
  *
  * @param input Input element

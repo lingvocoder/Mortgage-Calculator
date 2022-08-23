@@ -1,14 +1,32 @@
 {
-  "devDependencies": {
-    "@types/jest": "^23.3.12",
-    "jest": "^28.1.1"
-  },
+  "name": "mortgage_calculator",
+  "version": "1.0.0",
+  "description": "Mortgage calculator with amortization table, chart and PDF conversion",
+  "main": "main.js",
   "scripts": {
-    "test": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lingvocoder/Mortgage-Calculator.git"
+  },
+  "keywords": [
+    "mortgage",
+    "calculator",
+    "mortgage",
+    "calc",
+    "mortgage",
+    "calculator",
+    "javascript"
+  ],
+  "author": "Aleksey Goncharov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lingvocoder/Mortgage-Calculator/issues"
+  },
+  "homepage": "https://github.com/lingvocoder/Mortgage-Calculator#readme",
   "dependencies": {
-    "jspdf": "^2.5.1",
-    "jspdf-autotable": "^3.5.25",
+    "chart.js": "^3.9.1",
     "prettier": "^2.7.1"
   }
 }

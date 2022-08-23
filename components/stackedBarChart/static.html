@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chart</title>
+    <link rel="stylesheet" type="text/css" href="../../global.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<div id="paymentChart" class="payments-chart">
+    <div class="m-calculator__inner">
+        <div class="payments-chart__container" style="--chart-height: 200">
+            <div class="payments-chart__title">Monthly Amortization Schedule</div>
+            <div class="payments-chart__inner">
+                <div data-element="body" class="payments-chart__body">
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Jun 2022</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$18,560.00</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$97,912.57</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    31.87016362310895" data-value="18560">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    168.12983637689103" data-value="97912.57428287694">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Jul 2022</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$18,086.76</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$98,385.82</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    31.057536080620643" data-value="18086.755890966095">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    168.94246391937932" data-value="98385.81839191084">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Aug 2022</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$17,611.22</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$98,861.35</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    30.24098083834364" data-value="17611.22443540519">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    169.7590191616563" data-value="98861.34984747175">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Sep 2022</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$17,133.39</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$99,339.18</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    29.420478912395637" data-value="17133.39457780908">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    170.57952108760435" data-value="99339.17970506786">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Oct 2022</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$16,653.26</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$99,819.32</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    28.596011227138877" data-value="16653.255209234583">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    171.40398877286108" data-value="99819.31907364236">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Nov 2022</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$16,170.80</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$100,301.78</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    27.76755861473672" data-value="16170.795167045313">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    172.23244138526326" data-value="100301.77911583162">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Dec 2022</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$15,686.00</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$100,786.57</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    26.93510181470795" data-value="15686.003234652128">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    173.064898185292" data-value="100786.57104822481">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Jan 2023</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$15,198.87</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$101,273.71</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    26.09862147347904" data-value="15198.868141252375">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    173.90137852652094" data-value="101273.70614162456">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Feb 2023</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$14,709.38</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$101,763.20</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    25.25809814393419" data-value="14709.378561567855">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    174.74190185606577" data-value="101763.1957213091">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Mar 2023</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$14,217.52</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$102,255.05</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    24.4135122849632" data-value="14217.523115581527">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    175.58648771503675" data-value="102255.0511672954">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Apr 2023</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$13,723.29</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$102,749.28</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    23.56484426100719" data-value="13723.290368272934">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    176.4351557389928" data-value="102749.283914604">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>May 2023</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$13,226.67</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$103,245.91</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    22.712074341602055" data-value="13226.668829352348">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    177.2879256583979" data-value="103245.9054535246">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Jun 2023</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$12,727.65</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$103,744.93</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    21.855182700919798" data-value="12727.646952993644">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    178.14481729908022" data-value="103744.9273298833">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Jul 2023</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$12,226.21</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$104,246.36</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    20.994149417307582" data-value="12226.213137565874">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    179.00585058269243" data-value="104246.36114531108">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Aug 2023</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$11,722.36</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$104,750.22</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    20.128954472824564" data-value="11722.355725363537">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    179.8710455271754" data-value="104750.2185575134">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Sep 2023</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$11,216.06</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$105,256.51</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    19.259577752776554" data-value="11216.063002335557">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    180.74042224722342" data-value="105256.51128054138">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Oct 2023</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$10,707.32</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$105,765.25</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    18.385999045248308" data-value="10707.32319781294">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    181.61400095475167" data-value="105765.251085064">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Nov 2023</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$10,196.12</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$106,276.45</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    17.508198040633673" data-value="10196.124484235132">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    182.4918019593663" data-value="106276.44979864181">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Dec 2023</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$9,682.45</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$106,790.12</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    16.626154331163402" data-value="9682.45497687503">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    183.3738456688366" data-value="106790.1193060019">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Jan 2024</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$9,166.30</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$107,306.27</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    15.739847410430695" data-value="9166.302733562688">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    184.2601525895693" data-value="107306.27154931426">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Feb 2024</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$8,647.66</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$107,824.92</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    14.849256672914443" data-value="8647.65575440767">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    185.15074332708554" data-value="107824.91852846928">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Mar 2024</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$8,126.50</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$108,346.07</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    13.954361413500196" data-value="8126.501981520068">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    186.04563858649982" data-value="108346.07230135688">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Apr 2024</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$7,602.83</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$108,869.74</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    13.055140826998782" data-value="7602.829298730176">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    186.9448591730012" data-value="108869.74498414676">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>May 2024</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$7,076.63</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$109,395.95</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    12.15157400766261" data-value="7076.6255313067995">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    187.8484259923374" data-value="109395.94875157015">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Jun 2024</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$6,547.88</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$109,924.70</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    11.243639948699645" data-value="6547.878445674211">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    188.75636005130033" data-value="109924.69583720273">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Jul 2024</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$6,016.58</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$110,456.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    10.331317541785026" data-value="6016.575749127731">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    189.66868245821496" data-value="110455.99853374921">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Aug 2024</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$5,482.71</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$110,989.87</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    9.414585576570323" data-value="5482.705089547944">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    190.58541442342965" data-value="110989.869193329">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Sep 2024</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$4,946.25</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$111,526.32</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    8.493422740190411" data-value="4946.25405511352">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    191.50657725980957" data-value="111526.32022776343">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Oct 2024</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$4,407.21</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$112,065.36</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    7.567807616767999" data-value="4407.210174012664">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    192.432192383232" data-value="112065.36410886428">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Nov 2024</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$3,865.56</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$112,607.01</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    6.6377186869157105" data-value="3865.5609141531527">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    193.36228131308428" data-value="112607.0133687238">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Dec 2024</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$3,321.29</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$113,151.28</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    5.703134327235802" data-value="3321.2936828709876">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    194.29686567276417" data-value="113151.28060000595">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Jan 2025</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$2,774.40</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$113,698.18</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    4.764032809817443" data-value="2774.3958266376258">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    195.23596719018252" data-value="113698.17845623931">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Feb 2025</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$2,224.85</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$114,247.72</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    3.82039230173156" data-value="2224.854630765802">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    196.1796076982684" data-value="114247.71965211113">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Mar 2025</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$1,672.66</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$114,799.92</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    2.872190864523263" data-value="1672.6573191139314">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    197.1278091354767" data-value="114799.91696376301">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>Apr 2025</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$1,117.79</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$115,354.78</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    1.919406453701792" data-value="1117.7910537890768">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    198.0805935462982" data-value="115354.78322908787">
+                        </div>
+                    </div>
+
+                    <div class="payments-chart__bar-wrapper" data-tooltip="
+                        <div>
+                            <div class='m-tooltip__row'>
+                                <span class='m-tooltip__cell m-tooltip__cell_date'>May 2025</span>
+                                    </div>
+                                        <div class='m-tooltip__content'>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_interest'>Interest:</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$560.24</span>
+                                            </div>
+                                            <div class='m-tooltip__row'>
+                                                <span class='m-tooltip__cell m-tooltip__cell_principal'>Principal</span>
+                                                <span class='m-tooltip__cell m-tooltip__cell_option'>$115,912.33</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ">
+                        <div class="payments-chart__bar payments-chart__bar_interest" style="--value:
+                                    0.9620169182280172" data-value="560.2429348484854">
+                        </div>
+                        <div class="payments-chart__bar payments-chart__bar_principal" style="--value:
+                                    199.03798308177196" data-value="115912.33134802846">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="payments-chart__details">
+            <div class="payments-chart__point-wrapper">
+                            <span class="payments-chart__term">
+                                Interest
+                            </span>
+                <span class="payments-chart__definition payments-chart__definition_interest"></span>
+                <span class="payments-chart__term">
+                                Principal
+                            </span>
+                <span class="payments-chart__definition payments-chart__definition_principal"></span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

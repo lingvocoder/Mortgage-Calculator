@@ -450,6 +450,12 @@
     }
 
     &__row {
+      &-separator {
+        & > th {
+          display: inline-table;
+          width: 100%;
+        }
+      }
 
       &_up {
         position: fixed;

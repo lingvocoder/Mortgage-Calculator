@@ -1,0 +1,360 @@
+@import "../../_variables/variables";
+@import "../../_mixins/mixins";
+
+$underlay-color: rgba(11, 31, 53, 1);
+$minor-color: rgb(107, 114, 128);
+$t-row-bg-color: rgb(249, 250, 251);
+
+.payments {
+
+  &__modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 100vh;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+
+    &_inner {
+      position: relative;
+      margin: 2rem auto;
+      max-width: 45vw;
+    }
+
+    &_bg {
+      position: relative;
+      width: 100%;
+      padding: 3rem 4rem;
+      background: #ffffff;
+      box-shadow: 24px 16px 31px -4px rgba(0, 11, 41, 0.06), 0px 0px 16px rgba(0, 11, 41, 0.03);
+      border-radius: 8px;
+    }
+  }
+
+  &__underlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $underlay-color;
+    opacity: 0.4;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    font: {
+      size: setFontSizeRem($rf-size, 24);
+      weight: 700;
+    };
+    line-height: 36px;
+    text-align: left;
+  }
+
+  &__details {
+    width: auto;
+    border-collapse: unset;
+    border-color: inherit;
+    table-layout: fixed;
+    color: $main-color;
+    border-spacing: 1px;
+    background-color: $t-row-bg-color;
+    border-radius: 4px;
+
+    & > tbody {
+      vertical-align: middle;
+      background-color: $t-row-bg-color;
+    }
+
+    & td {
+      font: {
+        size: setFontSizeRem($rf-size, 14);
+      };
+      line-height: 1.25rem;
+      text-align: left;
+      white-space: nowrap;
+    }
+  }
+
+  &__visual {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin-bottom: 40px;
+    gap: 1rem;
+  }
+
+  &__doughnut {
+    display: flex;
+    flex: 1;
+    padding: 32px 48px;
+    background: $t-row-bg-color;
+    border-radius: 4px;
+
+    &-wrapper {
+      margin: -8px 0 -14px -10px;
+    }
+
+    &-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 38px;
+      margin-top: 8px;
+
+      & .payments__term {
+        display: inline-block;
+        padding: 0;
+        margin: 0 0 2px;
+        min-width: auto;
+        font: {
+          size: setFontSizeRem($rf-size, 13);
+        };
+        line-height: 16px;
+      }
+
+      & .payments__definition {
+        display: inline-block;
+        padding: 0;
+        font: {
+          size: setFontSizeRem($rf-size, 13);
+        };
+        line-height: 16px;
+      }
+    }
+
+
+    &-row {
+      position: relative;
+      margin-bottom: 8px;
+      text-align: left;
+
+      &:before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        top: 5px;
+        left: -22px;
+        width: 12px;
+        height: 12px;
+        border-radius: 9999px;
+      }
+
+      &_interest {
+        &:before {
+          background-color: $bar-interest-color;
+        }
+      }
+
+      &_principal {
+        &:before {
+          background-color: $bar-principal-color;
+        }
+      }
+    }
+
+    &-chart {
+      transform: rotate(-90deg);
+      width: 172px;
+      height: 172px;
+    }
+  }
+
+  &__point-wrapper {
+
+    &:nth-child(1) {
+      & td {
+        padding-top: 1.5rem;
+      }
+    }
+
+    &:nth-child(4) {
+      & td {
+        padding-bottom: 1.5rem;
+      }
+    }
+  }
+
+  &__term {
+    min-width: 15rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    white-space: nowrap;
+    color: $minor-color;
+    font: {
+      weight: 400;
+    };
+  }
+
+  &__definition {
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    font: {
+      weight: 600;
+    };
+  }
+
+  &__disclaimer {
+    text-align: center;
+    color: $minor-color;
+    margin: 0 auto 0.5rem 4rem;
+    font: {
+      size: setFontSizeRem($rf-size, 12);
+      weight: 400;
+    };
+  }
+
+  &__row {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: auto;
+
+    &_close {
+      top: 0;
+      justify-content: flex-end;
+
+      & > .modal__icon_mobile {
+        display: none;
+      }
+
+      & > .modal__icon_desktop {
+        display: flex;
+      }
+    }
+
+    &_up {
+      bottom: 0;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      & > .modal__icon_mobile {
+        display: none;
+      }
+
+      & > .modal__icon_desktop {
+        display: flex;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    top: 40px;
+    height: 100%;
+    overflow-y: visible;
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    z-index: $z-index * 20;
+    cursor: pointer;
+
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    margin-right: 12px;
+    border: 0;
+    background-color: transparent;
+
+    &_download {
+      display: none;
+      border: 2px solid $main-color;
+      border-radius: 9999px;
+    }
+
+    &_up {
+      border: 2px solid $main-color;
+      border-radius: 9999px;
+
+      & .payments__icon_up {
+        stroke: $main-color
+      }
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    border-color: inherit;
+    table-layout: fixed;
+    color: $main-color;
+  }
+
+  &__t-header {
+    border-collapse: collapse;
+
+    &-cell {
+      padding: 1rem;
+      font: {
+        size: setFontSizeRem($rf-size, 14);
+        weight: 600;
+      };
+      line-height: 20px;
+      text-align: left;
+      letter-spacing: 0.5px;
+
+      &[data-id="principal"] {
+        text-align: center;
+      }
+    }
+  }
+
+  &__t-body {
+    background-color: rgb(255, 255, 255);
+
+    &-cell {
+      padding: 1rem 1rem 1.5rem;
+      font: {
+        size: setFontSizeRem($rf-size, 14);
+        weight: 400;
+      };
+      line-height: 20px;
+      text-align: left;
+      white-space: nowrap;
+
+      &[data-id="interestPaid"] {
+        color: $minor-color;
+      }
+
+      &[data-id="principal"] {
+        text-align: center;
+        color: $minor-color;
+      }
+    }
+  }
+
+  &__t-row {
+    display: table-row;
+
+    &-separator {
+      & > th {
+        $separator-bg-color: rgb(14, 36, 48);
+
+        padding: 0.5rem 1rem 0.5rem;
+        font: {
+          size: setFontSizeRem($rf-size, 14);
+          weight: 600;
+        };
+        line-height: 20px;
+        color: #fff;
+        text-align: center;
+        background-color: lighten($separator-bg-color, 5);
+      }
+    }
+    &[data-num="even"] {
+      background-color: $t-row-bg-color;
+    }
+  }
+
+}

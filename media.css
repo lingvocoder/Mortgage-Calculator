@@ -214,6 +214,9 @@
   .payments__table td[data-id="principal"],
   .payments__table td[data-id="interestPaid"] {
     display: none; }
+  .payments__row-separator > th {
+    display: inline-table;
+    width: 100%; }
   .payments__row_up {
     position: fixed;
     width: auto;
@@ -221,7 +224,7 @@
     .payments__row_up .payments__button {
       margin-top: 0;
       margin-bottom: 0;
-      background-color: #0e2430;
+      background-color: black;
       box-shadow: 0 2px 10px rgba(14, 36, 48, 0.4); }
       .payments__row_up .payments__button_download {
         display: flex; }

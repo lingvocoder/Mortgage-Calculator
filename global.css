@@ -8,7 +8,7 @@ html, body {
   height: 100%;
   width: 100%;
   text-align: center;
-  font-family: "Segoe UI", "Roboto", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-style: normal;
@@ -49,7 +49,7 @@ h4 {
     font-weight: 600;
     line-height: 1rem;
     letter-spacing: 0.025rem;
-    color: #0e2430; }
+    color: black; }
     .m-calculator__title_section {
       text-align: left; }
   .m-calculator__wrapper {
@@ -81,7 +81,7 @@ h4 {
       margin-top: 2rem; }
   .m-calculator__input-container {
     width: 100%;
-    color: #0e2430; }
+    color: black; }
   .m-calculator__input-wrapper {
     position: relative;
     display: flex;
@@ -100,7 +100,7 @@ h4 {
     font-size: 1rem;
     font-weight: 700;
     line-height: 1.25rem;
-    color: #0e2430;
+    color: black;
     background-color: transparent;
     border: 0;
     border-top-right-radius: 4px;
@@ -154,7 +154,7 @@ h4 {
     left: 0;
     bottom: -1px;
     right: 100%;
-    border-bottom: 2px solid #0e2430;
+    border-bottom: 2px solid black;
     transition: background-color 0.15s 0s, right 0.15s 0s;
     animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
   .m-calculator__option {
@@ -170,7 +170,7 @@ h4 {
     height: auto;
     padding: 0.375rem 1rem;
     line-height: 1.25rem;
-    color: #0e2430;
+    color: black;
     border-right: 1px solid #ced4da;
     text-transform: uppercase; }
   .m-calculator__badge {
@@ -190,7 +190,7 @@ h4 {
       margin-right: 4px; }
   .m-calculator__sign {
     padding: 0.25rem;
-    border: 1px solid #0e2430;
+    border: 1px solid black;
     border-radius: 9999px;
     display: inline-flex;
     align-items: center;
@@ -214,8 +214,8 @@ h4 {
     .m-calculator__output_overlapped {
       position: absolute;
       right: 0;
-      z-index: 0;
-      font-weight: 400; }
+      font-weight: 400;
+      z-index: 0; }
   .m-calculator__readings {
     line-height: 1.25rem; }
   .m-calculator__btn-group {
@@ -243,7 +243,7 @@ h4 {
     width: 45%;
     padding: 8px 16px;
     background-color: #02b2ee;
-    color: #fff;
+    color: white;
     border: 1px solid transparent;
     border-radius: 4px;
     cursor: pointer;
@@ -251,13 +251,13 @@ h4 {
     .m-calculator__btn_download {
       width: auto; }
     .m-calculator__btn:hover {
-      background-color: rgba(2, 178, 238, 0.7); }
+      background-color: #26c6fd; }
     .m-calculator__btn_link {
       text-decoration: none;
       cursor: pointer; }
     .m-calculator__btn-text {
       font-size: 1rem;
-      font-weight: 500;
+      font-weight: 400;
       line-height: 1.25rem; }
 
 .range-slider {
@@ -374,13 +374,13 @@ h4 {
     left: 0;
     width: 100%;
     height: 200px;
-    background: url("assets/icons/charts-skeleton.svg") center no-repeat;
+    background: url("../../assets/icons/charts-skeleton.svg") center no-repeat;
     background-size: cover;
     display: block; }
   .payments-chart__container {
     position: relative;
     padding-bottom: 20px;
-    background-color: #fff; }
+    background-color: white; }
   .payments-chart__title {
     margin-top: 0;
     margin-bottom: 20px;
@@ -388,7 +388,7 @@ h4 {
     font-weight: 400;
     line-height: 1rem;
     letter-spacing: 0.025rem;
-    color: #0e2430; }
+    color: black; }
   .payments-chart__inner {
     max-width: 100%;
     position: relative;
@@ -408,6 +408,7 @@ h4 {
     min-width: 1.6px;
     flex-grow: 1;
     margin: 0 0 0 0.8px;
+    /*0.8px is the number that makes all the bars stay away from each other at equal distance (without extra white space)*/
     cursor: pointer;
     transition: opacity 0.1s 0s cubic-bezier(0.45, 0, 0.55, 1); }
     .payments-chart__bar-wrapper:first-child {
@@ -440,7 +441,7 @@ h4 {
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 16px;
-    color: #0e2430; }
+    color: black; }
   .payments-chart__definition {
     width: 30px;
     display: inline-block; }
@@ -465,8 +466,10 @@ h4 {
   .m-tooltip__content {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 8px; }
+    gap: 4px;
+    padding-top: 8px;
+    margin-top: 8px;
+    border-top: 1px solid #51595d; }
   .m-tooltip__row {
     position: relative;
     display: grid;
@@ -479,10 +482,10 @@ h4 {
     line-height: 16px; }
     .m-tooltip__cell_date {
       font-size: 0.8125rem;
-      font-weight: 500; }
+      font-weight: 600; }
     .m-tooltip__cell_payment {
       font-size: 0.8125rem;
-      font-weight: 400; }
+      font-weight: 600; }
     .m-tooltip__cell_principal {
       font-size: 0.875rem;
       font-weight: 400; }
@@ -549,9 +552,8 @@ h4 {
   border-collapse: unset;
   border-color: inherit;
   table-layout: fixed;
-  color: #0e2430;
+  color: black;
   border-spacing: 1px;
-  margin-bottom: 40px;
   background-color: #f9fafb;
   border-radius: 4px; }
   .payments__details > tbody {
@@ -562,13 +564,67 @@ h4 {
     line-height: 1.25rem;
     text-align: left;
     white-space: nowrap; }
+.payments__visual {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-bottom: 40px;
+  gap: 1rem; }
+.payments__doughnut {
+  display: flex;
+  flex: 1;
+  padding: 32px 48px;
+  background: #f9fafb;
+  border-radius: 4px; }
+  .payments__doughnut-wrapper {
+    margin: -8px 0 -14px -10px; }
+  .payments__doughnut-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 38px;
+    margin-top: 8px; }
+    .payments__doughnut-details .payments__term {
+      display: inline-block;
+      padding: 0;
+      margin: 0 0 2px;
+      min-width: auto;
+      font-size: 0.8125rem;
+      line-height: 16px; }
+    .payments__doughnut-details .payments__definition {
+      display: inline-block;
+      padding: 0;
+      font-size: 0.8125rem;
+      line-height: 16px; }
+  .payments__doughnut-row {
+    position: relative;
+    margin-bottom: 8px;
+    text-align: left; }
+    .payments__doughnut-row:before {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      top: 5px;
+      left: -22px;
+      width: 12px;
+      height: 12px;
+      border-radius: 9999px; }
+    .payments__doughnut-row_interest:before {
+      background-color: #06d6a0; }
+    .payments__doughnut-row_principal:before {
+      background-color: #02b2ee; }
+  .payments__doughnut-chart {
+    transform: rotate(-90deg);
+    width: 172px;
+    height: 172px; }
 .payments__point-wrapper:nth-child(1) td {
   padding-top: 1.5rem; }
 .payments__point-wrapper:nth-child(4) td {
   padding-bottom: 1.5rem; }
 .payments__term {
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
   min-width: 15rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  white-space: nowrap;
   color: #6b7280;
   font-weight: 400; }
 .payments__definition {
@@ -609,8 +665,8 @@ h4 {
   height: 100%;
   overflow-y: visible; }
 .payments__icon {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   z-index: 400;
   cursor: pointer; }
 .payments__button {
@@ -625,19 +681,19 @@ h4 {
   background-color: transparent; }
   .payments__button_download {
     display: none;
-    border: 2px solid #0e2430;
-    border-radius: 2px; }
+    border: 2px solid black;
+    border-radius: 9999px; }
   .payments__button_up {
-    border: 2px solid #0e2430;
-    border-radius: 2px; }
+    border: 2px solid black;
+    border-radius: 9999px; }
     .payments__button_up .payments__icon_up {
-      stroke: #0e2430; }
+      stroke: black; }
 .payments__table {
   width: 100%;
   border-collapse: collapse;
   border-color: inherit;
   table-layout: fixed;
-  color: #0e2430; }
+  color: black; }
 .payments__t-header {
   border-collapse: collapse; }
   .payments__t-header-cell {
@@ -650,7 +706,7 @@ h4 {
     .payments__t-header-cell[data-id="principal"] {
       text-align: center; }
 .payments__t-body {
-  background-color: #fff; }
+  background-color: white; }
   .payments__t-body-cell {
     padding: 1rem 1rem 1.5rem;
     font-size: 0.875rem;
@@ -665,14 +721,14 @@ h4 {
       color: #6b7280; }
 .payments__t-row {
   display: table-row; }
-  .payments__t-row-separator {
-    text-align: center;
+  .payments__t-row-separator > th {
     padding: 0.5rem 1rem 0.5rem;
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 20px;
     color: #fff;
-    background-color: #0e2430; }
+    text-align: center;
+    background-color: #143344; }
   .payments__t-row[data-num="even"] {
     background-color: #f9fafb; }
 
@@ -892,6 +948,9 @@ h4 {
   .payments__table td[data-id="principal"],
   .payments__table td[data-id="interestPaid"] {
     display: none; }
+  .payments__row-separator > th {
+    display: inline-table;
+    width: 100%; }
   .payments__row_up {
     position: fixed;
     width: auto;
@@ -899,7 +958,7 @@ h4 {
     .payments__row_up .payments__button {
       margin-top: 0;
       margin-bottom: 0;
-      background-color: #0e2430;
+      background-color: black;
       box-shadow: 0 2px 10px rgba(14, 36, 48, 0.4); }
       .payments__row_up .payments__button_download {
         display: flex; }
