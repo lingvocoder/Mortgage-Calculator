@@ -102,6 +102,8 @@
     transform: rotate(-90deg);
     width: 172px;
     height: 172px; }
+    .payments__doughnut-chart > circle {
+      animation: fillCircleUp 0.5s cubic-bezier(0.45, 0, 0.55, 1); }
 .payments__point-wrapper:nth-child(1) td {
   padding-top: 1.5rem; }
 .payments__point-wrapper:nth-child(4) td {
@@ -216,5 +218,11 @@
     background-color: #143344; }
   .payments__t-row[data-num="even"] {
     background-color: #f9fafb; }
+
+@keyframes fillCircleUp {
+  from {
+    stroke-dasharray: 0 var(--dash-width); }
+  to {
+    stroke-dasharray: var(--stroke-width) var(--dash-width); } }
 
 /*# sourceMappingURL=styles.css.map */

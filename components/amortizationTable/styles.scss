@@ -125,7 +125,6 @@ $t-row-bg-color: rgb(249, 250, 251);
       }
     }
 
-
     &-row {
       position: relative;
       margin-bottom: 8px;
@@ -159,6 +158,10 @@ $t-row-bg-color: rgb(249, 250, 251);
       transform: rotate(-90deg);
       width: 172px;
       height: 172px;
+
+      & > circle {
+        animation: fillCircleUp 0.5s cubic-bezier($animation-timing);
+      }
     }
   }
 
@@ -358,3 +361,13 @@ $t-row-bg-color: rgb(249, 250, 251);
   }
 
 }
+
+@keyframes fillCircleUp {
+  from{
+    stroke-dasharray: 0 var(--dash-width);
+  }
+  to {
+    stroke-dasharray: var(--stroke-width) var(--dash-width);
+  }
+}
+
