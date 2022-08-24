@@ -1,4 +1,4 @@
-export default class Tooltip {
+export class Tooltip {
   static instance;
   element;
 

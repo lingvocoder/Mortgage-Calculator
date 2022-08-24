@@ -1,5 +1,5 @@
 import { formatNumber, roundNumber } from "../../scripts/helpers/main.js";
-import Tooltip from "../toolTip/main.js";
+import {Tooltip} from "../toolTip/main.js";
 
 export class PaymentChart {
   chartHeight = 200;
