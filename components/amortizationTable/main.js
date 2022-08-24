@@ -1,7 +1,7 @@
 import { formatNumber } from "../../scripts/helpers/main.js";
 import amortizationTableHeaderConfig from "./config.js";
 
-export default class AmortizationTable {
+export class AmortizationTable {
   element;
   static activeTable;
 
@@ -218,12 +218,12 @@ export default class AmortizationTable {
     return `
             <figure class="payments__doughnut">
                  <div class="payments__doughnut-wrapper">
-                    <svg style="--stroke-width:${absoluteFieldTotalPayments};--dash-width:${circumference}" aria-label="Amortization schedule chart" class="payments__doughnut-chart" role="img" viewBox="0 0 36 36" aria-labelledby="chart-title chart-desc">
+                    <svg  aria-label="Amortization schedule chart" class="payments__doughnut-chart" role="img" viewBox="0 0 36 36" aria-labelledby="chart-title chart-desc">
                         <title id="chart-title">Amortization schedule doughnut chart</title>
-                        <desc id="chart-desc">Doghnut chart showing 2 segments. The one with ID principal stands for total loan amount, the one with ID interest stands for total interest paid.</desc>
-                        <circle  cx="18" cy="18" id="principal" r="12" fill="transparent" stroke="#02B2EEFF" stroke-dasharray="${absoluteFieldTotalPayments} ${circumference}" stroke-dashoffset="-${absoluteFieldInterest}" stroke-width="8"></circle>
-                        <circle style="--stroke-width:${absoluteFieldInterest};--dash-width:${circumference}" cx="18" cy="18" id="interest" r="12" fill="transparent" stroke="#06D6A0FF" stroke-dasharray="${absoluteFieldInterest} ${circumference}" stroke-dashoffset="0" stroke-width="8"></circle>
-                        </svg>
+                        <desc id="chart-desc">Doghnut chart showing 2 segments. The one with ID 'principal' stands for Total loan amount, another one with ID 'interest' stands for Total interest paid.</desc>
+                        <circle style="--stroke-width:${absoluteFieldTotalPayments};--dash-width:${circumference}" id="principal" cx="18" cy="18" r="12" fill="transparent" stroke="#02B2EEFF" stroke-dasharray="${absoluteFieldTotalPayments} ${circumference}" stroke-dashoffset="-${absoluteFieldInterest}" stroke-width="8"></circle>
+                        <circle style="--stroke-width:${absoluteFieldInterest};--dash-width:${circumference}" id="interest" cx="18" cy="18" r="12" fill="transparent" stroke="#06D6A0FF" stroke-dasharray="${absoluteFieldInterest} ${circumference}" stroke-dashoffset="0" stroke-width="8"></circle>
+                    </svg>
                  </div>
                  <figcaption class="payments__doughnut-details" role="presentation">
                     <div class="payments__doughnut-row payments__doughnut-row_principal">

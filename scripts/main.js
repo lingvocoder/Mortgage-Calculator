@@ -24,8 +24,8 @@ import {
   setInputValue,
   replaceInString,
 } from "./helpers/main.js";
-import AmortizationTable from "../components/amortizationTable/main.js";
-import PaymentChart from "../components/stackedBarChart/main.js";
+import {AmortizationTable} from "../components/amortizationTable/main.js";
+import {PaymentChart} from "../components/stackedBarChart/main.js";
 import { Chart, registerables } from "../node_modules/chart.js/dist/chart.mjs";
 
 Chart.register(...registerables);
